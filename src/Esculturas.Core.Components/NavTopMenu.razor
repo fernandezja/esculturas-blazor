@@ -1,0 +1,46 @@
+﻿@inject NavigationManager NavigationManager
+
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Ciudad de las esculturas</a>
+
+    <input class="form-control form-control-dark w-100 search-txt"
+           type="text"
+           placeholder="Ingrese el texto a buscar"
+           @bind="filtro.PalabrasABuscar"
+           @onkeyup="OnInputKeyUp"
+           aria-label="Search" />
+
+    <button @onclick="@(() => OnClickBuscar.InvokeAsync(filtro))"
+            type="button" class="btn search-btn font-color-white">
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </button>
+
+    
+</nav>
+
+@code {
+
+    [Parameter]
+    public EventCallback<EsculturaFiltro> OnClickBuscar { get; set; }
+
+    private EsculturaFiltro filtro = new EsculturaFiltro();
+
+    void OnInputKeyUp(KeyboardEventArgs keyboardEventArgs)
+    {
+        if (keyboardEventArgs.Key == "Enter")
+        {
+            OnClickBuscar.InvokeAsync(filtro);
+            NavigationManager.NavigateTo("buscar");
+        }
+    }
+
+
+    //bool collapseNavMenu = true;
+
+    //string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    //void ToggleNavMenu()
+    //{
+    //    collapseNavMenu = !collapseNavMenu;
+    //}
+}

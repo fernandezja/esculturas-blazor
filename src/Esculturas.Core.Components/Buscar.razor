@@ -1,0 +1,65 @@
+﻿@page "/buscar"
+@inject AppState state
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Esculturas</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+
+        <div class="btn-group mr-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary" @onclick="ChangeViewToTable">Tabla</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" @onclick="ChangeViewToCard">Cards</button>
+        </div>
+
+        <div class="btn-group mr-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+        </div>
+        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar"></span>
+            This week
+        </button>
+    </div>
+</div>
+
+@if (_viewType == "Table")
+{
+    <ResultadoEnTabla />
+}
+@if (_viewType == "Card")
+{
+    <ResultadoEnCard />
+}
+
+
+
+@code {
+
+    private string _viewType = "Table";
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        //await InitAsync();
+    }
+
+    protected async Task InitAsync()
+    {
+        //_esculturas = await esculturasService.GetEsculturasAsync("");
+        //StateHasChanged();
+    }
+
+    public void ChangeViewToTable(EventArgs eventArgs)
+    {
+        ChangeView("Table");
+    }
+
+    public void ChangeViewToCard(EventArgs eventArgs)
+    {
+        ChangeView("Card");
+    }
+
+    public void ChangeView(string viewType)
+    {
+        _viewType = viewType;
+    }
+}

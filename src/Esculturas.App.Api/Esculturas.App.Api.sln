@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esculturas.App.Api", "Esculturas.App.Api.csproj", "{4D5EB5B5-B7BA-4773-9871-66B38652B073}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D5EB5B5-B7BA-4773-9871-66B38652B073}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D5EB5B5-B7BA-4773-9871-66B38652B073}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D5EB5B5-B7BA-4773-9871-66B38652B073}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D5EB5B5-B7BA-4773-9871-66B38652B073}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DC88C04-1CB8-4A96-98F5-C8EE626259E2}
+	EndGlobalSection
+EndGlobal

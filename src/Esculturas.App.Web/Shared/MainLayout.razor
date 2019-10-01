@@ -1,0 +1,15 @@
+﻿@inherits LayoutComponentBase
+@inject AppState state
+
+<NavTopMenu OnClickBuscar="state.BuscarAsync" />
+
+<div class="container-fluid">
+    <div class="row">
+
+        <NavSideMenu />
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            @Body
+        </main>
+    </div>
+</div>

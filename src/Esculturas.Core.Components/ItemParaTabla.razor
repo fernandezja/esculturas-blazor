@@ -1,0 +1,29 @@
+﻿@page "/ItemParaTabla"
+@using Esculturas.Core.Entities
+
+<tr>
+    <td>@Item.Nombre</td>
+    <td>
+        @Item.Escultor.Nombre
+        @if (Item.Escultor.TienePais)
+        {
+            <text>
+                (@Item.Escultor.Pais)
+            </text>
+        }
+    </td>
+    <td>@Item.Material</td>
+    <td>
+        Acciones... 
+
+    </td>
+</tr>
+
+
+@code {
+
+    [Parameter]
+    public Escultura Item { get; set; }
+
+   
+}

@@ -1,0 +1,43 @@
+﻿@page "/ResultadoEnTabla"
+@inject AppState state
+
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Escultura</th>
+                <th>Escultor</th>
+                <th>Material</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (state.Esculturas == null)
+            {
+                <tr><td colspan="4">Buscando...</td></tr>
+            }
+            else
+            {
+                foreach (var e in state.Esculturas)
+                {
+                    <ItemParaTabla Item="e" />
+                }
+            }
+
+        </tbody>
+    </table>
+</div>
+
+
+
+@code {
+
+    //[Parameter]
+    //public List<Escultura> Esculturas { get; set; }
+
+    protected override void OnInitialized()
+    {
+        state.OnChange += StateHasChanged;
+    }
+
+}

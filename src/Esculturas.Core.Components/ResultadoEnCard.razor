@@ -1,0 +1,38 @@
+﻿@page "/ResultadoEnCard"
+@inject AppState state
+
+    <div class="cards-responsive">
+        Resultado en cards
+        <div class="row">
+            @if (state.Esculturas == null)
+            {
+                <text>
+                    Buscando...
+                </text>
+            }
+            else
+            {
+                <text>
+                    @foreach (var e in state.Esculturas)
+                    {
+                        <ItemParaCard Item="e" />
+                    }
+                </text>
+
+            }
+        </div>
+    </div>
+
+
+
+@code {
+
+    //[Parameter]
+    //public List<Escultura> Esculturas { get; set; }
+
+    protected override void OnInitialized()
+    {
+        state.OnChange += StateHasChanged;
+    }
+
+}
